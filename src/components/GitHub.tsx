@@ -4,9 +4,11 @@ import {UserDetails} from "./UserDetails.tsx";
 import {Search} from "./Search.tsx";
 import {SearchUserType, UsersList} from "./UsersList.tsx";
 
+const INITIAL_SEARCH = 'olga'
+
 export const GitHub = () => {
   const [selectedUser, setSelectedUser] = useState<SearchUserType | null>(null)
-  const [searchTerm, setSearchTerm] = useState<string>('it-kamasutra')
+  const [searchTerm, setSearchTerm] = useState<string>(INITIAL_SEARCH)
 
   useEffect(() => {
     // console.log('GitHub - useEffect')
