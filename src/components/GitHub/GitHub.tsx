@@ -1,8 +1,8 @@
 import s from './gitHub.module.css'
 import {useEffect, useState} from "react";
-import {UserDetails} from "./UserDetails.tsx";
-import {Search} from "./Search.tsx";
-import {SearchUserType, UsersList} from "./UsersList.tsx";
+import {UserDetails} from "../UserDetails.tsx";
+import {Search} from "../Search.tsx";
+import {SearchUserType, UsersList} from "../UsersList.tsx";
 
 const INITIAL_SEARCH = 'olga'
 
