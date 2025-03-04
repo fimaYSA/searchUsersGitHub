@@ -1,0 +1,8 @@
+.app_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #1f2631;
+}

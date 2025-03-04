@@ -1,8 +1,13 @@
 import './App.css'
-import {GitHub} from "./components/GitHub.tsx";
+import {FC} from "react";
+import {GitHub} from "./components/GitHub/GitHub.tsx";
 
-function App() {
-  return <GitHub/>
+export const App: FC = () => {
+  return (
+    <div className={'app_container'}>
+      <GitHub/>
+    </div>
+  )
 }
 
-export default App
+
