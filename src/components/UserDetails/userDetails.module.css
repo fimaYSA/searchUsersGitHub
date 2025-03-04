@@ -1,0 +1,40 @@
+.details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 20px;
+  color: #c2cec8
+}
+
+.details_item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details_img {
+  height: 80%;
+}
+
+.description > li {
+  padding: 3px 0;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.details_item_button {
+  border: none;
+  width: 250px;
+  text-decoration: none;
+  padding: 3px;
+  background-color: #f94b2a;
+  cursor: pointer;
+}
+
+.details_item_button > a {
+  text-decoration: none;
+  color: #161b25;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+}

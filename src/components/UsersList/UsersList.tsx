@@ -1,7 +1,7 @@
 import {FC, useEffect, useState} from "react";
-import s from "./gitHub.module.css";
+import s from "./usersList.module.css";
 import axios from "axios";
-import {Preloader} from "./Preloader.tsx";
+import {Preloader} from "../Preloader.tsx";
 
 export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) => {
   const [users, setUsers] = useState<SearchUserType[]>([])
@@ -20,12 +20,12 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
 
   // console.log('FoundUsers')
   return (
-    <div>
+    <ul className={s.users_list}>
       {loading
         ? <Preloader/>
         : users.map(u => {
           return <li
-            className={u === selectedUser ? s.selectedUser : ''}
+            className={u === selectedUser ? s.selectedUser : '' + s.users_list_item}
             onClick={() => {
               onUserSelect(u)
             }}
@@ -33,7 +33,7 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
             {u.login}
           </li>
         })}
-    </div>
+    </ul>
   )
 }
 

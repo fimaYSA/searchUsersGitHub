@@ -1,0 +1,21 @@
+.users_list {
+  color: #cbd3d6;
+  overflow-y: auto;
+}
+
+.users_list::-webkit-scrollbar {
+  width: 5px;
+  background-color: #3e4957;
+}
+
+.users_list::-webkit-scrollbar-thumb {
+  background-color: #2d3443;
+}
+
+.users_list_item {
+  padding: 3px;
+}
+
+.selectedUser {
+  color: #7f5652;
+}

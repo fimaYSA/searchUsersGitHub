@@ -22,7 +22,7 @@ export const Timer: FC<OwnProps> = ({userId, onShowUserDetails}) => {
   }, [seconds])
 
   return (
-    <div>{seconds}</div>
+    <div>Timer: <span style={{color: seconds < 10? 'red': 'green'}}>{seconds}</span></div>
   )
 }
 
