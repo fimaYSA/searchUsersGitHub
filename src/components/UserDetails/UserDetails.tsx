@@ -2,8 +2,10 @@ import {FC, useEffect, useState} from "react";
 import s from './userDetails.module.css'
 import axios from "axios";
 import {SearchUserType} from "../UsersList/UsersList.tsx";
-import {Timer} from "../Timer.tsx";
+// import {Timer} from "../Timer.tsx";
 import {Preloader} from "../Preloader.tsx";
+import {Button} from "@mui/material";
+import {css} from "@emotion/css";
 
 export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
   const [userDetails, setUserDetails] = useState<null | UserType>(null)
@@ -27,7 +29,7 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
       : userDetails ?
         <div className={s.details}>
           <div className={s.details_item}>
-            <Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>
+            {/*<Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>*/}
             <h1>{userDetails.name ? userDetails.name : userDetails.login}</h1>
             <ul className={s.description}>
               <li>Date of created: {userDetails.created_at.substr(0, 10).split('-').reverse().join('-')}</li>
@@ -39,6 +41,10 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
             <button className={s.details_item_button}>
               <a href={userDetails.html_url} target={'_blank'}>My GitHub page</a>
             </button>
+            <Button href={userDetails.html_url} target={'_blank'}
+                    className={css`background-color: #7f5652; color: green`}>
+              My GitHub page
+            </Button>
           </div>
           <img
             className={s.details_img}
