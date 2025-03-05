@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from "react";
 import s from './userDetails.module.css'
 import axios from "axios";
 import {SearchUserType} from "../UsersList/UsersList.tsx";
-// import {Timer} from "../Timer.tsx";
+import {Timer} from "../Timer.tsx";
 import {Preloader} from "../Preloader.tsx";
 
 export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
@@ -27,7 +27,7 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
       : userDetails ?
         <div className={s.details}>
           <div className={s.details_item}>
-            {/*<Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>*/}
+            <Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>
             <h1>{userDetails.name ? userDetails.name : userDetails.login}</h1>
             <ul className={s.description}>
               <li>Date of created: {userDetails.created_at.substr(0, 10).split('-').reverse().join('-')}</li>
