@@ -1,5 +1,6 @@
 .users_list {
   color: rgba(203, 211, 214, 0.64);
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
