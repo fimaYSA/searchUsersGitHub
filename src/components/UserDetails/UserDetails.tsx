@@ -4,14 +4,12 @@ import axios from "axios";
 import {SearchUserType} from "../UsersList/UsersList.tsx";
 import {Timer} from "../Timer.tsx";
 import {Preloader} from "../Preloader.tsx";
-// import {Repos} from "./Repos.tsx";
 
 export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
   const [userDetails, setUserDetails] = useState<null | UserType>(null)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // console.log('UserDetails - useEffect')
     if (!!selectedUser) {
       setLoading(true)
       axios
@@ -23,33 +21,37 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
     }
   }, [selectedUser])
 
-  // console.log('UserDetails')
   return <>
     {loading
       ? <Preloader/>
-      : userDetails &&
-      <div className={s.details}>
-        <div className={s.details_item}>
-          <Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>
-          <h1>{userDetails.name ? userDetails.name : userDetails.login}</h1>
-          <ul className={s.description}>
-            <li>Date of created: {userDetails.created_at.substr(0, 10).split('-').reverse().join('-')}</li>
-            <li>Date of updating: {userDetails.updated_at.substr(0, 10).split('-').reverse().join('-')}</li>
-            <li>Public repositories: {userDetails.public_repos}</li>
-            <li>Followers: {userDetails.followers}</li>
-            <li>Following: {userDetails.following}</li>
-          </ul>
-          <button className={s.details_item_button}>
-            <a href={userDetails.html_url} target={'_blank'}>My GitHub page</a>
-          </button>
+      : userDetails ?
+        <div className={s.details}>
+          <div className={s.details_item}>
+            <Timer userId={userDetails.id} onShowUserDetails={setUserDetails}/>
+            <h1>{userDetails.name ? userDetails.name : userDetails.login}</h1>
+            <ul className={s.description}>
+              <li>Date of created: {userDetails.created_at.substr(0, 10).split('-').reverse().join('-')}</li>
+              <li>Date of updating: {userDetails.updated_at.substr(0, 10).split('-').reverse().join('-')}</li>
+              <li>Public repositories: {userDetails.public_repos}</li>
+              <li>Followers: {userDetails.followers}</li>
+              <li>Following: {userDetails.following}</li>
+            </ul>
+            <button className={s.details_item_button}>
+              <a href={userDetails.html_url} target={'_blank'}>My GitHub page</a>
+            </button>
+          </div>
+          <img
+            className={s.details_img}
+            src={userDetails.avatar_url} alt={userDetails.login}
+          />
         </div>
-        <img
-          className={s.details_img}
-          src={userDetails.avatar_url} alt={userDetails.login}
-        />
-        {/*<Repos repos_url={userDetails.repos_url}/>*/
-        }
-      </div>
+        : <div className={s.not_details}>
+          <p>Select a user from the list</p>
+          <p>of</p>
+          <p>Find a new github user</p>
+          <p>by entering the login in the search bar</p>
+          <p>Once the timer expires, the user's card will be closed</p>
+        </div>
     }
   </>
 }

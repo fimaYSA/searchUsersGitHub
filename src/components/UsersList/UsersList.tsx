@@ -8,7 +8,6 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // console.log('FoundUsers - useEffect')
     setLoading(true)
     axios
       .get<SearchResultType>(`https://api.github.com/search/users?q=${term}`)
@@ -18,19 +17,21 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
       })
   }, [term])
 
-  // console.log('FoundUsers')
   return (
     <ul className={s.users_list}>
       {loading
         ? <Preloader/>
         : users.map(u => {
           return <li
-            className={u === selectedUser ? s.selectedUser : '' + s.users_list_item}
+            className={u === selectedUser ? `${s.selectedUser} ${s.users_list_item}` : s.users_list_item}
             onClick={() => {
               onUserSelect(u)
             }}
             key={u.id}>
-            {u.login}
+
+            <img src={u.avatar_url} alt={'img'}/>
+            <div>{u.login}</div>
+
           </li>
         })}
     </ul>
@@ -40,6 +41,7 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
 export type SearchUserType = {
   login: string
   id: number
+  avatar_url: string
 }
 export type SearchResultType = {
   items: SearchUserType[]

@@ -1,17 +1,16 @@
 import {FC, useEffect, useState} from "react";
 import s from './search.module.css'
+
 export const Search: FC<OwnPropsType> = ({searchTerm, onSubmit}) => {
   const [tempSearch, setTempSearch] = useState<string>('')
 
   useEffect(() => {
-    // console.log('Search - useEffect')
     setTempSearch(searchTerm)
   }, [searchTerm])
 
-  // console.log('Search')
   return (
     <div className={s.search}>
-      <div className={s.search_row}>
+      <div>
         <input
           className={s.search_input}
           placeholder={'search'}

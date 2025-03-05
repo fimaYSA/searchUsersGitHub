@@ -1,5 +1,5 @@
 .users_list {
-  color: #cbd3d6;
+  color: rgba(203, 211, 214, 0.64);
   overflow-y: auto;
 }
 
@@ -13,7 +13,16 @@
 }
 
 .users_list_item {
-  padding: 3px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.users_list_item > img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+
 }
 
 .selectedUser {

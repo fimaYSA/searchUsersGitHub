@@ -1,7 +1,7 @@
 import {FC, useEffect, useState} from "react";
 
 export const Timer: FC<OwnProps> = ({userId, onShowUserDetails}) => {
-  const startTimerValue = 60
+  const startTimerValue = 30
   const [seconds, setSeconds] = useState(startTimerValue)
 
   useEffect(() => {

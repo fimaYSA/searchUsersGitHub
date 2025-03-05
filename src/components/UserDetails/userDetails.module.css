@@ -1,9 +1,15 @@
 .details {
+  height: 450px;
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding-right: 20px;
-  color: #c2cec8
+  /*padding-right: 20px;*/
+  padding: 10px;
+  margin-right: 20px;
+  color: rgba(194, 206, 200, 0.53);
+  /*background-color: #19202b;*/
+  background-color: #161b25;
+  box-shadow: 0 12px 45px -5px rgba(0, 0, 0, 0.59);
 }
 
 .details_item {
@@ -13,7 +19,8 @@
 }
 
 .details_img {
-  height: 80%;
+  height: 100%;
+  border-radius: 7px;
 }
 
 .description > li {
@@ -29,7 +36,7 @@ textarea:focus, input:focus {
   width: 250px;
   text-decoration: none;
   padding: 3px;
-  background-color: #f94b2a;
+  background-color: rgba(249, 75, 42, 0.76);
   cursor: pointer;
 }
 
@@ -37,4 +44,29 @@ textarea:focus, input:focus {
   text-decoration: none;
   color: #161b25;
   font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.not_details {
+  font-size: 1.2em;
+  color: rgba(194, 206, 200, 0.35);
+  text-align: center;
+  margin: auto;
+}
+
+.not_details > p {
+  margin: 0;
+}
+
+.not_details > p:first-child {
+font-size: 1.8em;
+}
+.not_details > p:nth-child(2) {
+  font-size: 1.5em;
+color: rgba(245, 75, 41, 0.51);
+}
+
+.not_details > p:last-child {
+  margin-top: 15px;
+  font-size: .9em;
+  color: rgba(51, 66, 51, 0.86);
 }

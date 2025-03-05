@@ -12,13 +12,11 @@ export const GitHub = () => {
   const [searchTerm, setSearchTerm] = useState<string>(INITIAL_SEARCH)
 
   useEffect(() => {
-    // console.log('GitHub - useEffect')
     if (selectedUser) {
       document.title = selectedUser.login
     }
   }, [selectedUser])
 
-  // console.log('GitHub')
   return (
     <div className={s.wrapper}>
       <Header/>
