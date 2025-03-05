@@ -4,8 +4,7 @@ import axios from "axios";
 import {SearchUserType} from "../UsersList/UsersList.tsx";
 // import {Timer} from "../Timer.tsx";
 import {Preloader} from "../Preloader.tsx";
-import {Button} from "@mui/material";
-import {css} from "@emotion/css";
+import {Button, Slider} from "@mui/material";
 
 export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
   const [userDetails, setUserDetails] = useState<null | UserType>(null)
@@ -42,9 +41,11 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
               <a href={userDetails.html_url} target={'_blank'}>My GitHub page</a>
             </button>
             <Button href={userDetails.html_url} target={'_blank'}
-                    className={css`background-color: #7f5652; color: green`}>
+                    className={s.details_item_button}>
               My GitHub page
             </Button>
+            <Slider defaultValue={30} />
+            <Slider defaultValue={30} className={s.slider} />
           </div>
           <img
             className={s.details_img}
