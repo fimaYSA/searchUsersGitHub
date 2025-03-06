@@ -41,10 +41,11 @@ export const UserDetails: FC<OwnProps> = ({selectedUser}) => {
               <a href={userDetails.html_url} target={'_blank'}>My GitHub page</a>
             </button>
             <Button href={userDetails.html_url} target={'_blank'}
-                    className={s.details_item_button}>
+                    className={s.details_item_button}
+            >
               My GitHub page
             </Button>
-            <Slider defaultValue={30} />
+            <Slider defaultValue={30}  />
             <Slider defaultValue={30} className={s.slider} />
           </div>
           <img
