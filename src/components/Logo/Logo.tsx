@@ -1,5 +1,5 @@
-import {FC} from "react";
-import s from "./logo.module.css";
+import {FC} from 'react';
+import s from './logo.module.css';
 
 export const Logo: FC = () => {
   return (

@@ -1,6 +1,6 @@
-import {FC} from "react";
-import s from "./header.module.css";
-import {Logo} from "../Logo/Logo.tsx";
+import {FC} from 'react';
+import s from './header.module.css';
+import {Logo} from '../Logo/Logo.tsx';
 
 export const Header: FC = () => {
   return (
