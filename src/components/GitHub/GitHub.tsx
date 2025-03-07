@@ -1,11 +1,12 @@
 import s from './gitHub.module.css'
-import {useEffect, useState} from "react";
-import {UserDetails} from "../UserDetails/UserDetails.tsx";
-import {Search} from "../Search/Search.tsx";
-import {SearchUserType, UsersList} from "../UsersList/UsersList.tsx";
-import {Header} from "../Header/Header.tsx";
+import {useEffect, useState} from 'react';
+import {UserDetails} from '../UserDetails/UserDetails.tsx';
+import {Search} from '../Search/Search.tsx';
+import {SearchUserType, UsersList} from '../UsersList/UsersList.tsx';
+import {Header} from '../Header/Header.tsx';
+import {Box, Container} from '@mui/material';
 
-const INITIAL_SEARCH = 'olga'
+const INITIAL_SEARCH = 'ola'
 
 export const GitHub = () => {
   const [selectedUser, setSelectedUser] = useState<SearchUserType | null>(null)
@@ -18,19 +19,24 @@ export const GitHub = () => {
   }, [selectedUser])
 
   return (
-    <div className={s.wrapper}>
-      <Header/>
-      <div className={s.github_content}>
-        <div className={s.search_container}>
-          <Search searchTerm={searchTerm} onSubmit={setSearchTerm}/>
-          <UsersList selectedUser={selectedUser}
-                     onUserSelect={setSelectedUser}
-                     term={searchTerm}
-          />
+    <Container className={s.container}
+               disableGutters={true}
+               maxWidth={'lg'}
+    >
+      <Box className={s.wrapper}>
+        <Header/>
+        <div className={s.github_content}>
+          <div className={s.search_container}>
+            <Search searchTerm={searchTerm} onSubmit={setSearchTerm}/>
+            <UsersList selectedUser={selectedUser}
+                       onUserSelect={setSelectedUser}
+                       term={searchTerm}
+            />
+          </div>
+          <UserDetails selectedUser={selectedUser}/>
         </div>
-        <UserDetails selectedUser={selectedUser}/>
-      </div>
-    </div>
+      </Box>
+    </Container>
   )
 }
 
