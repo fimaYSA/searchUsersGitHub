@@ -4,6 +4,10 @@
   gap: 10px;
 }
 
+.search_row {
+  display: flex;
+}
+
 .search_input,
 .btn_find,
 .btn_reset {
@@ -34,4 +38,3 @@
 .btn_reset {
   background-color: #e5e5d3;
 }
-

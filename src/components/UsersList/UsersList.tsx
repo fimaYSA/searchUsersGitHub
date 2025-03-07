@@ -1,7 +1,7 @@
-import {FC, useEffect, useState} from "react";
-import s from "./usersList.module.css";
-import axios from "axios";
-import {Preloader} from "../Preloader.tsx";
+import {FC, useEffect, useState} from 'react';
+import s from './usersList.module.css';
+import axios from 'axios';
+import {Preloader} from '../Preloader.tsx';
 
 export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) => {
   const [users, setUsers] = useState<SearchUserType[]>([])
@@ -28,10 +28,8 @@ export const UsersList: FC<OwnPropsType> = ({selectedUser, onUserSelect, term}) 
               onUserSelect(u)
             }}
             key={u.id}>
-
             <img src={u.avatar_url} alt={'img'}/>
             <div>{u.login}</div>
-
           </li>
         })}
     </ul>

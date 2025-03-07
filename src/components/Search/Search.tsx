@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, useEffect, useState} from 'react';
 import s from './search.module.css'
 
 export const Search: FC<OwnPropsType> = ({searchTerm, onSubmit}) => {
@@ -10,7 +10,7 @@ export const Search: FC<OwnPropsType> = ({searchTerm, onSubmit}) => {
 
   return (
     <div className={s.search}>
-      <div>
+      <div className={s.search_row}>
         <input
           className={s.search_input}
           placeholder={'search'}
