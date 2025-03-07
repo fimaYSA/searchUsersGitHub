@@ -1,8 +1,10 @@
-import {FC} from "react";
-import {SyncOutlined} from "@ant-design/icons";
+import {FC} from 'react';
+import {SyncOutlined} from '@ant-design/icons';
 
 export const Preloader: FC = () => {
   return (
-    <div><SyncOutlined spin style={{fontSize: '2rem'}}/></div>
+    <div>
+      <SyncOutlined spin style={{fontSize: '2rem', color: '#768d68'}}/>
+    </div>
   )
 }

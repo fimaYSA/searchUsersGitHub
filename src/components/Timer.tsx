@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, useEffect, useState} from 'react';
 
 export const Timer: FC<OwnProps> = ({userId, onShowUserDetails}) => {
   const startTimerValue = 30
@@ -22,7 +22,7 @@ export const Timer: FC<OwnProps> = ({userId, onShowUserDetails}) => {
   }, [seconds])
 
   return (
-    <div>Timer: <span style={{color: seconds < 10? 'red': 'green'}}>{seconds}</span></div>
+    <div>Timer: <span style={{color: seconds < 10 ? 'red' : 'green'}}>{seconds}</span></div>
   )
 }
 

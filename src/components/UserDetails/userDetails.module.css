@@ -1,9 +1,10 @@
 .details {
   height: 450px;
   display: flex;
-  width: 810px;
   justify-content: space-between;
-  padding: 10px;
+  flex-grow: 2;
+  gap: 20px;
+  padding: 16px;
   margin-right: 20px;
   color: rgba(194, 206, 200, 0.53);
   background-color: #161b25;
@@ -25,16 +26,13 @@
   padding: 3px 0;
 }
 
-textarea:focus, input:focus {
-  outline: none;
-}
-
 .details_item_button {
   border: none;
-  width: 250px;
+  width: 200px;
   text-decoration: none;
   padding: 3px;
   background-color: rgba(249, 75, 42, 0.76);
+  font-weight: 900;
   cursor: pointer;
 }
 
@@ -56,24 +54,16 @@ textarea:focus, input:focus {
 }
 
 .not_details > p:first-child {
-font-size: 1.8em;
+  font-size: 1.8em;
 }
+
 .not_details > p:nth-child(2) {
   font-size: 1.5em;
-color: rgba(245, 75, 41, 0.51);
+  color: rgba(245, 75, 41, 0.51);
 }
 
 .not_details > p:last-child {
   margin-top: 15px;
   font-size: .9em;
   color: rgba(51, 66, 51, 0.86);
-}
-
-
-.slider {
-  color: #b22090;
-}
-
-.slider:hover {
-  color: #2e8b57;
 }
