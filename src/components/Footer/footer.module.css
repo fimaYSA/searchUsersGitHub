@@ -1,0 +1,11 @@
+.footer {
+	display: flex;
+	justify-content: center;
+}
+
+.footer > a {
+	text-decoration: none;
+	color: rgba(179, 186, 198, 0.27);
+	padding: 10px;
+	cursor: pointer;
+}
